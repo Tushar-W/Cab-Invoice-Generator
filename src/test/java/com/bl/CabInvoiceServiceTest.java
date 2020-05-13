@@ -20,5 +20,13 @@ public class CabInvoiceServiceTest {
         double fare = cabInvoiceService.calculateFare(distance, time);
         Assert.assertEquals(53,fare,0.0);
     }
+
+    @Test
+    public void GivenLessDistanceOrTime_ShouldReturnMinFare() {
+        double distance = 0.1;
+        int time = 1;
+        double fare = cabInvoiceService.calculateFare(distance, time);
+        Assert.assertEquals(5,fare,0.0);
+    }
 }
 
