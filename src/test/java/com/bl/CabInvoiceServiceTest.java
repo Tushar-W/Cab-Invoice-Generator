@@ -1,7 +1,8 @@
 package com.bl;
 
-import service.CabInvoiceService;
-import service.Ride;
+import com.bl.service.CabInvoiceService;
+import com.bl.service.InvoiceSummary;
+import com.bl.service.Ride;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,12 +32,13 @@ public class CabInvoiceServiceTest {
     }
 
     @Test
-    public void GivenMultipleRides_ShouldReturnTotalFare() {
+    public void GivenMultipleRides_ShouldReturnInvoiceSummary() {
         Ride[] rides = { new Ride(5, 3),
                          new Ride(0.1, 1)
-                        };
-        double fare = cabInvoiceService.calculateFare(rides);
-        Assert.assertEquals(58,fare,0.0);
+        };
+        InvoiceSummary summary = cabInvoiceService.calculateFare(rides);
+        InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 58.0);
+        Assert.assertEquals(expectedInvoiceSummary,summary);
     }
 }
 

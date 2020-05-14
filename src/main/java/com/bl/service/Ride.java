@@ -1,4 +1,4 @@
-package service;
+package com.bl.service;
 
 public class Ride {
     public double distance;
