@@ -1,7 +1,7 @@
 package com.bl;
 
-import com.bl.service.CabInvoiceService;
-import com.bl.service.Ride;
+import service.CabInvoiceService;
+import service.Ride;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
